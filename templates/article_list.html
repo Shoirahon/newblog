@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div>
+        {% for article in object_list %}
+            <div>
+             {% if article.photo %}
+                <img src="{{article.photo.url}}" alt="" class="img-fluid">
+                {% endif %}
+                <h2><a href="{% url 'article_detail' article.pk %}">{{ article.title }}</a></h2>
+                {% if article.summary %}
+                    <p>{{ article.summary }}</p>
+                {% else %}
+                    <p>{{ article.body|slice:'100'|safe }}</p>
+                {% endif %}
+                <span>{{ article.author }}</span>
+                <hr>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

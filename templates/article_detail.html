@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div>
+        <div>
+            {% if article.photo %}
+                <img src="{{article.photo.url}}" alt="" class="img-fluid">
+            {% endif %}
+            <h2 class="card-title">{{ article.title }}</h2>
+            <p class="card-text">{{ article.body | safe}}</p>
+            <div>
+                <a href="{% url 'article_edit' article.pk %}">Tahrirlash</a>
+                <a href="{% url 'article_delete' article.pk %}">O'chirish</a>
+            </div>
+
+            <span>{{ article.author }}</span> |
+            <small>{{ article.date }}</small>
+        </div>
+    </div>
+{% endblock content %}
