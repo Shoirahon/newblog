@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'whitenoise.runserver_noststic',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     # tashqi applar
     'crispy_forms',
